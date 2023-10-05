@@ -8,16 +8,26 @@ import (
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "<h1>Reilly Is Really Gay</h1>")
-	homepage, _ := template.ParseFiles("index.html")
+	homepage, _ := template.ParseFiles("index.html", "header.html")
+	
+	// sandwichFiles, _ := os.ReadDir("./img/sandwiches")
+	// var sandwichFilenames []string
+	// for _, file := range sandwichFiles {
+	// 	fullPath := "img/sandwiches/" + file.Name()
+	// 	sandwichFilenames = append(sandwichFilenames, fullPath)
+	// }
 
 	homepageData := struct {
 		Reasons []string
+		Sandwiches []string
 	}{
 		Reasons: []string{
 			"Sandwiches are based",
 			"God is based",
 			"Therefore God Exists",
+		},
+		Sandwiches: []string{
+			"https://upload.wikimedia.org/wikipedia/commons/2/24/Bologna_sandwich.jpg",
 		},
 	}
 

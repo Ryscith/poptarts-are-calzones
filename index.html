@@ -1,23 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="retro">
 
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.8.3/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Sandwiches, Calzones, and Salads | Food Categorization</title>
 </head>
 
-<body>
-  <h1>Poptarts are calzones is the funnel to believing in god</h1>
-  <h2>Here are some reasons why</h2>
-  <ul>
-    {{range .Reasons}}
-    <li>
-      {{.}}
-    </li>
+{{template "header"}}
+
+<body class="bg-base-100">
+  <div class="showcase">
+    <h1>The Grand Unifying Theory of Food Categorization</h1>
+    <p>When it comes to food, there are three categorizations. A sandwich is any food which is attempting to be contained, but still has at least one open face. A calzone is any food which is attempting to be contained, but has no open faces. Finally, a salad is any food which does not attempt to be contained. This is officially known as The Grand Unifying Theory of Food Categorization.</p>
+  </div>
+  
+  <div>
+    <h2>Examples of Sandwiches</h2>    
+    <div class="carousel w-full">
+    {{range $index, $sammypic := .Sandwiches}}
+    <div id={{$index}} class="carousel-item relative w-full">
+      <img src={{$sammypic}} class="w-full"/>
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+        <a href="0" class="btn btn-circle">❮</a> 
+        <a href={{$index}} class="btn btn-circle">❯</a>
+      </div>      
+    </div>
     {{end}}
-  </ul>
+    </div>
+  </div>
+  <div>
+    <h2>Examples of Calzones</h2>    
+  </div>
+  <div>
+    <h2>Examples of Salads</h2>    
+  </div>
 
 </body>
 
