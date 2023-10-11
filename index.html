@@ -10,13 +10,9 @@
   <title>Sandwiches, Calzones, and Salads | Food Categorization</title>
 </head>
 
-<nav class="navbar bg-base-300">
-    <a class="normal-case text-xl font-bold">Poptarts ARE Calzones</a>
-</nav>
-
 <body class="grid min-h-screen bg-base-100">
   <div class="hero min-h-screen">
-    <div class="hero-content text-center">
+    <div class="hero-content text-center bg-accent rounded-box mx-16 py-8">
       <div>
         <h1 class="text-5xl font-bold">The Grand Unifying Theory of Food Categorization</h1>
         <p class="py-6">When it comes to food, there are three categorizations:</p>
@@ -29,26 +25,48 @@
     </div>
   </div>
   
-  <div class="bg-accent text-accent-content">
-    <div>
-      <h2 class="text-3xl font-bold text-center py-8">Examples of Sandwiches</h2>    
-      <div class="carousel max-w-5xl">
+  <div class="grid grid-cols-1 gap-8 m-8">
+    <div class="bg-accent text-accent-content py-8 rounded-box">
+      <h2 class="text-3xl font-bold text-center">Examples of Sandwiches</h2>    
+      <div class="carousel max-w-5xl my-8">
       {{range $index, $sammypic := .Sandwiches}}
-      <div id={{$index}} class="carousel-item relative w-screen">
-        <div class="grid grid-cols-5 place-items-center w-screen">
-          <a href="#0" class="btn btn-circle">❮</a> 
-          <img src={{$sammypic}} class="w-full col-span-3 rounded-box"/>
-          <a href="#{{$index}}" class="btn btn-circle">❯</a>
+        <div id="sandwich-{{$index}}" class="carousel-item relative w-full">
+          <div class="grid grid-cols-5 place-items-center w-full">
+            <a href="#sandwich-0" class="btn btn-circle">❮</a> 
+            <img src={{$sammypic}} class="w-full col-span-3 rounded-box bg-neutral"/>
+            <a href="#sandwich-{{$index}}" class="btn btn-circle">❯</a>
+          </div>
         </div>
-      </div>
       {{end}}
       </div>
     </div>
-    <div>
-      <h2 class="text-3xl font-bold text-center py-8">Examples of Calzones</h2>    
+    <div class="bg-accent text-accent-content py-8 rounded-box">
+      <h2 class="text-3xl font-bold text-center">Examples of Calzones</h2>    
+      <div class="carousel max-w-5xl my-8">
+      {{range $index, $calzonepic := .Calzones}}
+        <div id="calz-{{$index}}" class="carousel-item relative w-full">
+          <div class="grid grid-cols-5 place-items-center w-full">
+            <a href="#calz-0" class="btn btn-circle">❮</a> 
+            <img src={{$calzonepic}} class="w-full col-span-3 rounded-box bg-neutral"/>
+            <a href="#calz-{{$index}}" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+      {{end}}
+      </div>
     </div>
-    <div>
-      <h2 class="text-3xl font-bold text-center py-8">Examples of Salads</h2>    
+    <div class="bg-accent text-accent-content py-8 rounded-box">
+      <h2 class="text-3xl font-bold text-center">Examples of Salads</h2>    
+      <div class="carousel max-w-5xl my-8">
+      {{range $index, $saladpic := .Salads}}
+        <div id="salad-{{$index}}" class="carousel-item relative w-full">
+          <div class="grid grid-cols-5 place-items-center w-full">
+            <a href="#salad-0" class="btn btn-circle">❮</a> 
+            <img src={{$saladpic}} class="w-full col-span-3 rounded-box bg-neutral"/>
+            <a href="#salad-{{$index}}" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+      {{end}}
+      </div>
     </div>
   </div>
 

@@ -22,6 +22,8 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	homepageData := struct {
 		Reasons    []string
 		Sandwiches []string
+		Calzones   []string
+		Salads     []string
 	}{
 		Reasons: []string{
 			"Sandwiches are based",
@@ -32,6 +34,16 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 			"https://upload.wikimedia.org/wikipedia/commons/2/24/Bologna_sandwich.jpg",
 			"img/sandwich_showcase.jpg",
 			"img/sandwiches/580b57fcd9996e24bc43c1b7.png",
+		},
+		Calzones: []string{
+			"https://upload.wikimedia.org/wikipedia/commons/2/24/Bologna_sandwich.jpg",
+			"https://upload.wikimedia.org/wikipedia/commons/2/24/Bologna_sandwich.jpg",
+			"https://upload.wikimedia.org/wikipedia/commons/2/24/Bologna_sandwich.jpg",
+		},
+		Salads: []string{
+			"https://upload.wikimedia.org/wikipedia/commons/2/24/Bologna_sandwich.jpg",
+			"https://upload.wikimedia.org/wikipedia/commons/2/24/Bologna_sandwich.jpg",
+			"https://upload.wikimedia.org/wikipedia/commons/2/24/Bologna_sandwich.jpg",
 		},
 	}
 
