@@ -10,35 +10,54 @@
   <title>Sandwiches, Calzones, and Salads | Food Categorization</title>
 </head>
 
-{{template "header"}}
+<nav class="navbar bg-base-300">
+    <a class="normal-case text-xl font-bold">Poptarts ARE Calzones</a>
+</nav>
 
-<body class="bg-base-100">
-  <div class="showcase">
-    <h1>The Grand Unifying Theory of Food Categorization</h1>
-    <p>When it comes to food, there are three categorizations. A sandwich is any food which is attempting to be contained, but still has at least one open face. A calzone is any food which is attempting to be contained, but has no open faces. Finally, a salad is any food which does not attempt to be contained. This is officially known as The Grand Unifying Theory of Food Categorization.</p>
+<body class="grid min-h-screen bg-base-100">
+  <div class="hero min-h-screen">
+    <div class="hero-content text-center">
+      <div>
+        <h1 class="text-5xl font-bold">The Grand Unifying Theory of Food Categorization</h1>
+        <p class="py-6">When it comes to food, there are three categorizations:</p>
+        <ul>
+          <li>A sandwich is any food which is attempting to be contained, but still has at least one open face.</li>
+          <li>A calzone is any food which is attempting to be contained, but has no open faces.</li>
+          <li>Finally, a salad is any food which does not attempt to be contained.</li>
+        </ul>
+      </div>
+    </div>
   </div>
   
-  <div>
-    <h2>Examples of Sandwiches</h2>    
-    <div class="carousel w-full">
-    {{range $index, $sammypic := .Sandwiches}}
-    <div id={{$index}} class="carousel-item relative w-full">
-      <img src={{$sammypic}} class="w-full"/>
-      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-        <a href="0" class="btn btn-circle">❮</a> 
-        <a href={{$index}} class="btn btn-circle">❯</a>
-      </div>      
+  <div class="bg-accent text-accent-content">
+    <div>
+      <h2 class="text-3xl font-bold text-center py-8">Examples of Sandwiches</h2>    
+      <div class="carousel max-w-5xl">
+      {{range $index, $sammypic := .Sandwiches}}
+      <div id={{$index}} class="carousel-item relative w-screen">
+        <div class="grid grid-cols-5 place-items-center w-screen">
+          <a href="#0" class="btn btn-circle">❮</a> 
+          <img src={{$sammypic}} class="w-full col-span-3 rounded-box"/>
+          <a href="#{{$index}}" class="btn btn-circle">❯</a>
+        </div>
+      </div>
+      {{end}}
+      </div>
     </div>
-    {{end}}
+    <div>
+      <h2 class="text-3xl font-bold text-center py-8">Examples of Calzones</h2>    
     </div>
-  </div>
-  <div>
-    <h2>Examples of Calzones</h2>    
-  </div>
-  <div>
-    <h2>Examples of Salads</h2>    
+    <div>
+      <h2 class="text-3xl font-bold text-center py-8">Examples of Salads</h2>    
+    </div>
   </div>
 
 </body>
+
+<footer class="footer footer-center p-4 bg-neutral text-neutral-content">
+  <aside>
+    <p>Copyright © 2023 - All rights reserved by Ryscith</p>
+  </aside>
+</footer>
 
 </html>
